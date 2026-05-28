@@ -428,7 +428,7 @@ export default function AgentCollaboration({ onSelectSection, onOpenDebate, sele
             </div>
 
             {/* React Flow 画布 */}
-            <div className="h-[700px] w-full">
+            <div className="h-[800px] w-full">
                 <ReactFlow
                     nodes={nodes}
                     edges={edges}
