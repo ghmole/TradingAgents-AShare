@@ -866,10 +866,11 @@ class CnAkshareProvider(BaseMarketDataProvider):
         try:
             ak = self._ak()
             with AKSHARE_CALL_LOCK:
-                df = ak.stock_board_industry_fund_flow_em(symbol="今日")
+                #df = ak.stock_board_industry_fund_flow_em(symbol="今日")
+                df = ak.stock_fund_flow_industry(symbol="即时")
             if df is None or df.empty:
                 return "今日板块资金流向数据暂不可用。"
-            sort_col = "今日主力净流入-净额"
+            sort_col = "净额"
             if sort_col in df.columns:
                 df_sorted = df.sort_values(sort_col, ascending=False).reset_index(drop=True)
             else:
